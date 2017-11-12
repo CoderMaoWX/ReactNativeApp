@@ -12,6 +12,6 @@
    AppRegistry,
  } from 'react-native';
 
- import MyRniOSAppDemo from './index.js';
+ import AppDemo from './index.js';
 
- AppRegistry.registerComponent('ReactNativeApp', () => MyRniOSAppDemo);
+ AppRegistry.registerComponent('ReactNativeApp', () => AppDemo);

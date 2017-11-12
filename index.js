@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry
-} from 'react-native';
 
-import Demo from './js/movieListDemo';
-// import Demo from './js/ListViewDemo';
-// import Demo from './js/DrawerLayoutDemo';
-// import Demo from './js/FetchDemo';
-// import Demo from './js/ViewPagerAndroidDemo';
-// import Demo from './js/ScrollViewAsViewPagerDemo';
-// import Demo from './js/FlexDemo';
-// import Demo from './js/HelloWorld';
+// import Demo from './js/studyDemojs/movieListDemo';
+// import Demo from './js/studyDemojs/ListViewDemo';
+// import Demo from './js/studyDemojs/DrawerLayoutDemo';
+// import Demo from './js/studyDemojs/FetchDemo';
+// import Demo from './js/studyDemojs/ViewPagerAndroidDemo';
+// import Demo from './js/studyDemojs/ScrollViewAsViewPagerDemo';
+// import Demo from './js/studyDemojs/FlexDemo';
+import Demo from './js/studyDemojs/HelloWorld';
 
 module.exports = Demo;

@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+let REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 export default class MyFirstRnApp extends Component {
     //返回当前显示的view
@@ -26,7 +26,7 @@ export default class MyFirstRnApp extends Component {
 
         //由于刚开始的的时候设置loaded为false，所以第一次会加载等待的view
         if (!this.state.loaded) {
-            return this.renderLoadingView();
+            return MyFirstRnApp.renderLoadingView();
         }
 
         return(
@@ -34,7 +34,7 @@ export default class MyFirstRnApp extends Component {
                 //设置ListView的数据源
                 dataSource={this.state.dataSource}
                 //listview的回掉方法
-                renderRow={this.renderMovie}
+                renderRow={MyFirstRnApp.renderMovie}
                 //监听滑动到底部的方法
                 onEndReached={()=> {this.fetchData()}}
                 style={styles.listView}
@@ -42,7 +42,7 @@ export default class MyFirstRnApp extends Component {
         );
     }
     //加载等待的view
-    renderLoadingView() {
+    static renderLoadingView() {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>
@@ -52,7 +52,7 @@ export default class MyFirstRnApp extends Component {
         );
     }
     //获取到数据加载到listview控件上显示
-    renderMovie(movie) {
+    static renderMovie(movie) {
         return (
             <View style={styles.container}>
                 <Image
@@ -63,6 +63,8 @@ export default class MyFirstRnApp extends Component {
                     <Text style={styles.title}>{movie.title}</Text>
                     <Text style={styles.year}>{movie.year}</Text>
                 </View>
+
+
             </View>
         );
     }
@@ -139,4 +141,4 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('MyFirstRnApp', () => MyFirstRnApp);
+AppRegistry.registerComponent('ReactNativeApp', () => MyFirstRnApp);
