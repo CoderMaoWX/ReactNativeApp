@@ -30,7 +30,7 @@ export default class HelloWorld extends Component {
     render() {
 
     //解构
-    const { title, backgroundColor, boject } = this.props;
+    const { title, backgroundColor, boject, fontSizes } = this.props;
 
     return (
         <View style={styles.container}>

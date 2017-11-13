@@ -13,7 +13,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import RnButton from '../componentjs/RnButton';
+import RnButton from './componentjs/RnButton';
 
 export default class HelloWorld extends Component {
   constructor(props) {

@@ -1,11 +1,12 @@
 
-// import Demo from './js/studyDemojs/movieListDemo';
-// import Demo from './js/studyDemojs/ListViewDemo';
-// import Demo from './js/studyDemojs/DrawerLayoutDemo';
-// import Demo from './js/studyDemojs/FetchDemo';
-// import Demo from './js/studyDemojs/ViewPagerAndroidDemo';
-// import Demo from './js/studyDemojs/ScrollViewAsViewPagerDemo';
-// import Demo from './js/studyDemojs/FlexDemo';
-import Demo from './js/studyDemojs/HelloWorld';
+// import Demo from './studyDemojs/movieListDemo';
+// import Demo from './studyDemojs/ListViewDemo';
+// import Demo from './studyDemojs/DrawerLayoutDemo';
+// import Demo from './studyDemojs/FetchDemo';
+// import Demo from './studyDemojs/ViewPagerAndroidDemo';
+// import Demo from './studyDemojs/ScrollViewAsViewPagerDemo';
+// import Demo from './studyDemojs/FlexDemo';
+// import Demo from './studyDemojs/HelloWorld';
+import Demo from './studyDemojs/LoginView';
 
 module.exports = Demo;
