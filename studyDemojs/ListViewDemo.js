@@ -5,7 +5,6 @@
  */
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   Text, View, ListView
 } from 'react-native';
 
