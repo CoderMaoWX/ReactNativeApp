@@ -7,6 +7,7 @@
 // import Demo from './studyDemojs/ScrollViewAsViewPagerDemo';
 // import Demo from './studyDemojs/FlexDemo';
 // import Demo from './studyDemojs/HelloWorld';
-import Demo from './studyDemojs/LoginView';
+// import Demo from './studyDemojs/LoginView';
+import Demo from './studyDemojs/ScrollViewDemo';
 
 module.exports = Demo;

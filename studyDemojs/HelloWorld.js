@@ -31,14 +31,14 @@ export default class HelloWorld extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={styles.welcome}>
-          Hello React Native!
-        </Text>
+        {/*<Text style={styles.welcome}>*/}
+          {/*Hello React Native!*/}
+        {/*</Text>*/}
 
-        <Image
-            style={styles.image}
-            source={{uri: 'http://reactnative.cn/scripts/d2285528f3ecd2059cb2fb635802a4f4.png'}}
-        />
+        {/*<Image*/}
+            {/*style={styles.image}*/}
+            {/*source={{uri: 'http://reactnative.cn/scripts/d2285528f3ecd2059cb2fb635802a4f4.png'}}*/}
+        {/*/>*/}
 
 
         {/*<TouchableOpacity*/}
@@ -50,6 +50,7 @@ export default class HelloWorld extends Component {
         {/*</TouchableOpacity>*/}
 
         {/*props属性 text="确定"*/}
+
         <RnButton title="确定" backgroundColor='red' boject={{a:'哈哈'}} touchAction={()=>{alert("你点击了确定按钮事件")}}/>
         <RnButton title="取消" backgroundColor='gray' boject={{a:'哈哈'}} touchAction={()=>{alert("你点击了取消按钮事件")}}/>
 
@@ -64,6 +65,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+
+  rnButtonStyle:{
+    height: 40,
+    width: 120,
   },
 
   buttonStyle: {

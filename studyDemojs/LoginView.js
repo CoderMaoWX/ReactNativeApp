@@ -56,18 +56,19 @@ export default class HelloWorld extends Component {
           <Image style={styles.imageStyles} source={require('../images/icon.png')} />
 
           {/*两个输入框*/}
-          <TextInput placeholder={'请输入用户名'} style={styles.textInputStyle} />
-          <TextInput placeholder={'请输入密码'} style={styles.textInputStyle} />
+          <TextInput style={styles.textInputStyle}
+                     placeholder={'请输入用户名'}
+                     clearButtonMode={'always'} >
+          </TextInput>
+          {/*<Image style={{width:40, height:40, marginTop:-50}} source={require('../images/icon7.png')} />*/}
+
+          <TextInput placeholder={'请输入密码'}
+                     style={styles.textInputStyle}
+                     secureTextEntry={true}
+                     clearButtonMode={'always'}>
+          </TextInput>
 
           {/*登录按钮*/}
-          {/*<RnButton*/}
-              {/*title="确定"*/}
-              {/*backgroundColor='rgb(62, 149, 255)'*/}
-              {/*fontSize="15"*/}
-              {/*titleColor=""*/}
-              {/*boject={{a:'哈哈'}}*/}
-              {/*touchAction={this.buttonAction}/>*/}
-
           <TouchableOpacity style={styles.buttonStyle} onPress={this.buttonAction} >
             <Text style={styles.buttonTextStyle}>登录</Text>
           </TouchableOpacity>
@@ -132,6 +133,9 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     height: 40,
     marginTop:1,
+    paddingLeft:20,
+    paddingRight:20,
+
   },
 
   buttonStyle: {
