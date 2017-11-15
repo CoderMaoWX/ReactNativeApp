@@ -9,6 +9,7 @@
 // import Demo from './studyDemojs/HelloWorld';
 // import Demo from './studyDemojs/LoginView';
 // import Demo from './studyDemojs/ScrollViewDemo';
-import Demo from './studyDemojs/WineListDemo';
+// import Demo from './studyDemojs/WineListDemo';
+import Demo from './studyDemojs/FlatListDemo';
 
 module.exports = Demo;

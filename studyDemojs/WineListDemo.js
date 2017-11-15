@@ -43,7 +43,7 @@ export default class WineListDemo extends Component {
           <View style={styles.contentViewStyle} >
 
             {/*左边图片*/}
-            <Image source={require("../images/10.jpg")} style={styles.imageStyle} />
+            <Image source={{uri:rowData.image}} style={styles.imageStyle} />
 
             {/*右边文字视图*/}
             <View style={styles.rightViewStyle} >
