@@ -37,13 +37,6 @@ export default class FlatListDemo extends Component {
     alert('onRefresh: nothing to refresh :P')
   };
 
-  refreshing(){
-    let timer =  setTimeout(()=>{
-      clearTimeout(timer)
-      alert('刷新成功')
-    },1500)
-  }
-
   render() {
     let data = [];
     for (let i = 0; i < 100; i++) {

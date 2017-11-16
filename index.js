@@ -5,11 +5,11 @@
 // import Demo from './studyDemojs/FetchDemo';
 // import Demo from './studyDemojs/ViewPagerAndroidDemo';
 // import Demo from './studyDemojs/ScrollViewAsViewPagerDemo';
-// import Demo from './studyDemojs/FlexDemo';
+import Demo from './studyDemojs/FlexDemo';
 // import Demo from './studyDemojs/HelloWorld';
 // import Demo from './studyDemojs/LoginView';
 // import Demo from './studyDemojs/ScrollViewDemo';
 // import Demo from './studyDemojs/WineListDemo';
-import Demo from './studyDemojs/FlatListDemo';
+// import Demo from './studyDemojs/FlatListDemo';
 
 module.exports = Demo;

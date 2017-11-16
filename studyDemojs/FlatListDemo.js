@@ -124,17 +124,39 @@ export default class LoadMoreDemo extends Component {
             ListFooterComponent={this._renderFooter.bind(this)}
             onEndReached={this._onEndReached.bind(this)}
             onEndReachedThreshold={1}
+            onRefresh={this._onRefresh}
+            refreshing={this.state.isRefreshing}
+            ListEmptyComponent={this._emptyView}
             ItemSeparatorComponent={this._separator}
         />
 
     );
   }
 
+  //页面没有数据时显示
+  _emptyView(){
+    return(
+        <Text>暂无数据，请去逛逛别的吧</Text>
+    )
+  }
+
+  //下拉刷新
+  _onRefresh = () => {
+    pageNo = 1,
+
+    this.setState({
+      dataArray: [],
+      showFoot:0,
+    })
+
+    this._onEndReached();
+  };
+
   _separator(){
     return <View style={{height:1,backgroundColor:'#999999'}}/>;
   }
 
-  _renderFooter(){
+  _renderFooter (){
     if (this.state.showFoot === 1) {
       return (
           <View style={{height:30,alignItems:'center',justifyContent:'flex-start',}}>
