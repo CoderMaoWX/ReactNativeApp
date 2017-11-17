@@ -57,7 +57,7 @@ export default class FlexDemo extends Component {
     ];
 
     return (
-        <View style={{ flex: 1 }}>
+          <View style={{flex:1}}>
           <Text style={{lineHeight:64, fontSize:25, alignSelf:'center',}}>通讯录</Text>
 
           <SectionList
