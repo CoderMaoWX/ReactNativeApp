@@ -14,19 +14,15 @@ import {
 
 // http://c.3g.163.com/nc/article/BMU8KHQD00964J4O/full.html
 
-var NewsDetail = React.createClass({
-    getDefaultProps(){
-      return{
-         
-      }  
-    },
+export default class NewsDetail extends Component {
 
-    getInitialState(){
-      return{
-          // 具体的数据
-          detailData: ''
-      }
-    },
+  constructor(props){
+    super(props);
+    this.state = {
+      // 具体的数据
+      detailData: ''
+    }
+  }
     
     render() {
         return (
@@ -40,7 +36,7 @@ var NewsDetail = React.createClass({
                 scalesPageToFit={this.state.scalesPageToFit}
             />
         );
-    },
+    }
 
     componentDidMount(){
        // 请求的路径
@@ -82,10 +78,8 @@ var NewsDetail = React.createClass({
            .catch((error) => {
                alert('请求数据失败');
            })
-
-
     }
-});
+}
 
 const styles = StyleSheet.create({
     container: {

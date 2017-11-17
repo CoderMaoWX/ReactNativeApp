@@ -7,10 +7,10 @@
 // import Demo from './studyDemojs/ScrollViewAsViewPagerDemo';
 // import Demo from './studyDemojs/SectionListDemo';
 // import Demo from './studyDemojs/HelloWorld';
-// import Demo from './studyDemojs/LoginView';
 // import Demo from './studyDemojs/ScrollViewDemo';
 // import Demo from './studyDemojs/WineListDemo';
 // import Demo from './studyDemojs/FlatListDemo';
-import Demo from './Component/XMGMain';
+// import Demo from './Component/XMGMain';
+import Demo from './studyDemojs/LoginView';
 
 module.exports = Demo;

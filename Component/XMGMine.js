@@ -5,13 +5,14 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    NavigatorIOS,
 } from 'react-native';
 
-var Mine = React.createClass({
+export default class XMGMine extends Component {
+
     render() {
         return (
             <View style={styles.container}>
@@ -21,7 +22,7 @@ var Mine = React.createClass({
             </View>
         );
     }
-});
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -38,4 +39,4 @@ const styles = StyleSheet.create({
 });
 
 // 输出类
-module.exports = Mine;
+module.exports = XMGMine;

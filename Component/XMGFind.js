@@ -5,13 +5,13 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View
 } from 'react-native';
 
-var Find = React.createClass({
+export default class XMGFind extends Component{
+
     render() {
         return (
             <View style={styles.container}>
@@ -21,7 +21,7 @@ var Find = React.createClass({
             </View>
         );
     }
-});
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -37,5 +37,4 @@ const styles = StyleSheet.create({
     }
 });
 
-// 输出类
-module.exports = Find;
+module.exports = XMGFind;

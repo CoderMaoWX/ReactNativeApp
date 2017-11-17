@@ -20,32 +20,26 @@ var {width} = Dimensions.get('window');
 // 引入计时器类库
 var TimerMixin = require('react-timer-mixin');
 
-var ScrollImage = React.createClass({
+export default class ScrollImage extends Component{
   
     // 注册计时器
-    mixins: [TimerMixin],
+    // mixins: [TimerMixin],
 
-    // 设置固定值
-    getDefaultProps(){
-       return{
-          // 每隔多少时间
-          duration: 1000,
-            
-          // 所有的Image对象数组
-          imageDataArr: [] 
-       }
-    },
+  constructor(props){
+    super(props);
+    this.state = {
+      // 每隔多少时间
+      duration: 1000,
 
-    // 设置可变的和初始值
-    getInitialState(){
-       return{
-          // 当前的页码
-          currentPage: 0,
+      // 所有的Image对象数组
+      imageDataArr: [],
+      // 当前的页码
+      currentPage: 0,
 
-          // 标题
-          title: this.props.imageDataArr[0].title
-       }
-    },
+      // 标题
+      title: this.props.imageDataArr[0].title
+    }
+  }
 
     render(){
        return(
@@ -78,25 +72,25 @@ var ScrollImage = React.createClass({
              </View>
           </View>
        );
-    },
+    }
 
     // 调用开始拖拽
     onScrollBeginDrag(){
        // 停止定时器
        this.clearInterval(this.timer);
-    },
+    }
 
     // 调用停止拖拽
    onScrollEndDrag(){
      // 开启定时器
      this.startTimer();
-   },
+   }
 
     // 实现一些复杂的操作
     componentDidMount(){
        // 开启定时器
        this.startTimer();
-    },
+    }
 
     // 开启定时器
     startTimer(){
@@ -126,7 +120,7 @@ var ScrollImage = React.createClass({
 
          }, this.props.duration);
 
-    },
+    }
 
 
     // 返回所有的图片
@@ -148,7 +142,7 @@ var ScrollImage = React.createClass({
         }
         // 返回数组
         return allImage;
-    },
+    }
 
    // 返回所有的圆点
    renderPageCircle(){
@@ -170,7 +164,7 @@ var ScrollImage = React.createClass({
        }
        // 返回
        return indicatorArr;
-   },
+   }
 
    //  当一帧滚动结束的时候调用
    onAnimationEnd(e){
@@ -189,8 +183,7 @@ var ScrollImage = React.createClass({
         title: this.props.imageDataArr[currentPage].title
       });
    }
-
-});
+}
 
 
 const styles = StyleSheet.create({

@@ -12,11 +12,41 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   TouchableOpacity,
+  NavigatorIOS,
 } from 'react-native';
 
-import RnButton from './componentjs/RnButton';
+import XMGMain from '../Component/XMGMain';
 
-export default class HelloWorld extends Component {
+/**
+ * 登录操作页面
+ */
+export default class Login extends Component {
+
+  render() {
+    return (
+        <NavigatorIOS
+            initialRoute={{
+              component: LoginView,
+              title: '登 录',
+            }}
+            style={{flex: 1}}
+        />
+    );
+  }
+}
+
+class LoginView extends Component {
+
+  username = '';
+  password = '';
+
+  onUsernameChanged = (newUsername) => {
+    this.username = newUsername;
+  };
+
+  onPasswordChanged = (newPassword) => {
+    this.password = newPassword;
+  };
 
   //构造函数
   constructor(props) {
@@ -26,16 +56,18 @@ export default class HelloWorld extends Component {
   };
 
   // 点击登录按钮事件
-  buttonAction = () => {
+  loginBtnAction = () => {
     this.dismissKeyboard();
 
-    //alert('你点击了按钮的状态:' + this.state.isShow);
-    alert('用户名或密码不正确');
-  };
+    if (this.username.length>0 && this.password.length>0) {
+      this.props.navigator.replace({
+        component: XMGMain, // 要跳转的版块
+        name:"首页"
+      });
 
-  // 点击背景事件
-  touchBgViewAction = () =>{
-    this.dismissKeyboard();
+    } else {
+        alert('用户名或密码不正确,登录失败');
+    }
   };
 
   // 消失键盘事件
@@ -44,62 +76,67 @@ export default class HelloWorld extends Component {
     dismissKeyboard();
   }
 
+  //登录页面入口 render() {
   render() {
     return (
 
         // 添加一个点击背景消失键盘
-        <TouchableWithoutFeedback onPress={this.touchBgViewAction} >
+        <TouchableWithoutFeedback onPress={this.dismissKeyboard} >
 
-        <View style={styles.contentViewStyle} >
+          <View style={styles.contentViewStyle} >
 
-          {/*头像*/}
-          <Image style={styles.imageStyles} source={require('../images/icon.png')} />
+            {/*头像*/}
+            <Image style={styles.imageStyles} source={require('../images/icon.png')} />
 
-          {/*两个输入框*/}
-          <TextInput style={styles.textInputStyle}
-                     placeholder={'请输入用户名'}
-                     clearButtonMode={'always'} >
-          </TextInput>
-          {/*<Image style={{width:40, height:40, marginTop:-50}} source={require('../images/icon7.png')} />*/}
+            {/*两个输入框*/}
+            <TextInput style={styles.textInputStyle}
+                       placeholder={'请输入用户名'}
+                       clearButtonMode={'always'}
+                       onChangeText={this.onUsernameChanged} >
+            </TextInput>
+            {/*<Image style={{width:40, height:40, marginTop:-50}} source={require('../images/icon7.png')} />*/}
 
-          <TextInput placeholder={'请输入密码'}
-                     style={styles.textInputStyle}
-                     secureTextEntry={true}
-                     clearButtonMode={'always'}>
-          </TextInput>
+            <TextInput placeholder={'请输入密码'}
+                       style={styles.textInputStyle}
+                       secureTextEntry={true}
+                       onChangeText={this.onPasswordChanged}
+                       clearButtonMode={'always'} >
+            </TextInput>
 
-          {/*登录按钮*/}
-          <TouchableOpacity style={styles.buttonStyle} onPress={this.buttonAction} >
-            <Text style={styles.buttonTextStyle}>登录</Text>
-          </TouchableOpacity>
+            {/*登录按钮*/}
+            <TouchableOpacity style={styles.buttonStyle} onPress={this.loginBtnAction} >
+              <Text style={styles.buttonTextStyle}>登录</Text>
+            </TouchableOpacity>
 
 
-          {/*无法登录,忘记密码文案*/}
-          <View style={styles.settingViewStyle}>
-            <Text style={styles.settingTextStyle}>无法登录?</Text>
-            <Text style={styles.settingTextStyle}>忘记密码</Text>
+            {/*无法登录,忘记密码文案*/}
+            <View style={styles.settingViewStyle}>
+              <Text style={styles.settingTextStyle}>无法登录?</Text>
+              <Text style={styles.settingTextStyle}>忘记密码</Text>
+            </View>
+
+
+            {/*其他操作文案*/}
+            <View style={styles.otherViewStyle}>
+              <Text style={styles.otherTextStyles}>其他登录方式:</Text>
+              <Image style={styles.otherBtnStyles} source={require('../images/icon3.png')} />
+              <Image style={styles.otherBtnStyles} source={require('../images/icon7.png')} />
+              <Image style={styles.otherBtnStyles} source={require('../images/icon8.png')} />
+            </View>
+
+
           </View>
-
-
-          {/*其他操作文案*/}
-          <View style={styles.otherViewStyle}>
-            <Text style={styles.otherTextStyles}>其他登录方式:</Text>
-            <Image style={styles.otherBtnStyles} source={require('../images/icon3.png')} />
-            <Image style={styles.otherBtnStyles} source={require('../images/icon7.png')} />
-            <Image style={styles.otherBtnStyles} source={require('../images/icon8.png')} />
-          </View>
-
-
-        </View>
         </TouchableWithoutFeedback>
     );
   }
 }
 
+
 const styles = StyleSheet.create({
 
   contentViewStyle: {
     backgroundColor: '#e2e2e2',
+    marginTop:64,
 
     //flexDirection的默认值是column(竖直轴方向), 而不是row(竖直轴方向)
     flexDirection: 'column',

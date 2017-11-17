@@ -11,7 +11,8 @@ import {
     View
 } from 'react-native';
 
-var Message = React.createClass({
+export default class XMGMessage extends Component{
+
     render() {
         return (
             <View style={styles.container}>
@@ -21,7 +22,7 @@ var Message = React.createClass({
             </View>
         );
     }
-});
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -37,5 +38,4 @@ const styles = StyleSheet.create({
     }
 });
 
-// 输出类
-module.exports = Message;
+module.exports = XMGMessage;
