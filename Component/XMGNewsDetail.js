@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -23,7 +22,7 @@ export default class NewsDetail extends Component {
       detailData: ''
     }
   }
-    
+
     render() {
         return (
             <WebView

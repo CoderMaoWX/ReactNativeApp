@@ -28,35 +28,35 @@ export default class XMGMain extends Component{
           tintColor="orange"
           barTintColor="white" >
 
-        {/*/!*首页*!/*/}
-        {/*<TabBarIOS.Item*/}
-            {/*icon= {{uri:'tabbar_home.png', scale: 2}}*/}
-            {/*title="首页"*/}
-            {/*selected={this.state.selectedTab == 'home'}*/}
-            {/*onPress={()=>{this.setState({selectedTab: 'home'})}}*/}
-        {/*>*/}
-          {/*<NavigatorIOS*/}
-              {/*tintColor = "orange"*/}
-              {/*style={{flex:1}}*/}
-              {/*initialRoute = {*/}
-                {/*{*/}
-                  {/*component: Home, // 具体的版块*/}
-                  {/*title:'网易',*/}
-                  {/*leftButtonIcon:{uri:'navigationbar_friendattention.png'},*/}
-                  {/*rightButtonIcon:{uri:'navigationbar_pop.png'}*/}
-                {/*}*/}
-              {/*}*/}
-          {/*/>*/}
-        {/*</TabBarIOS.Item>*/}
+        {/*首页*/}
+        <TabBarIOS.Item
+            icon= {{uri:'tabbar_home.png', scale: 2}}
+            title="首页"
+            selected={this.state.selectedTab == 'home'}
+            onPress={()=>{this.setState({selectedTab: 'home'})}}
+        >
+          <NavigatorIOS
+              tintColor = "orange"
+              style={{flex:1}}
+              initialRoute = {
+                {
+                  component: Home, // 具体的版块
+                  title:'网易',
+                  leftButtonIcon:{uri:'navigationbar_friendattention.png'},
+                  rightButtonIcon:{uri:'navigationbar_pop.png'}
+                }
+              }
+          />
+        </TabBarIOS.Item>
 
 
         <TabBarIOS.Item
             title="消息"
             icon={{uri:'tabbar_message_center.png', scale: 2}}
-            selected={this.state.selectedTab === 'home'}
+            selected={this.state.selectedTab === 'msg'}
             onPress={() => {
               this.setState({
-                selectedTab: 'home',
+                selectedTab: 'msg',
               });
             }}>
 

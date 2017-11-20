@@ -25,11 +25,12 @@ export default class Login extends Component {
   render() {
     return (
         <NavigatorIOS
+            ref="navigator"
+            style={{flex: 1}}
             initialRoute={{
               component: LoginView,
               title: '登 录',
             }}
-            style={{flex: 1}}
         />
     );
   }
@@ -60,9 +61,14 @@ class LoginView extends Component {
     this.dismissKeyboard();
 
     if (this.username.length>0 && this.password.length>0) {
-      this.props.navigator.replace({
+      this.props.navigator.push({
         component: XMGMain, // 要跳转的版块
-        name:"首页"
+        params: {
+          logNmae: this.state.username,
+          logPwd: this.state.userpwd,
+          parentComponent: this,
+          ...this.props
+        },
       });
 
     } else {
@@ -82,7 +88,6 @@ class LoginView extends Component {
 
         // 添加一个点击背景消失键盘
         <TouchableWithoutFeedback onPress={this.dismissKeyboard} >
-
           <View style={styles.contentViewStyle} >
 
             {/*头像*/}
@@ -104,7 +109,7 @@ class LoginView extends Component {
             </TextInput>
 
             {/*登录按钮*/}
-            <TouchableOpacity style={styles.buttonStyle} onPress={this.loginBtnAction} >
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=>this.loginBtnAction()} >
               <Text style={styles.buttonTextStyle}>登录</Text>
             </TouchableOpacity>
 

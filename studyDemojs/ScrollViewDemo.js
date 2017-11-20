@@ -16,7 +16,7 @@ import {
 let Dimensions = require('Dimensions');
 let {width} = Dimensions.get('window');
 
-export default class MyFirstRnApp extends Component {
+export default class ScrollViewDemo extends Component {
 
   constructor(props) {
     super(props);
@@ -85,7 +85,7 @@ export default class MyFirstRnApp extends Component {
 
     //求出当前的页数
     let currentPage = Math.floor(offsetX / width);
-    console.log("每一帧滚动结束时调用"+currentPage);
+    // console.log("每一帧滚动结束时调用"+currentPage);
 
     let imageTexts = ['魅蓝E2首创将闪光灯的功能丰富化',
       '参加红包雨活动入手价格还可以更低',
@@ -168,7 +168,7 @@ let styles = StyleSheet.create({
   },
 
   container: {
-    marginTop:200
+    marginTop:0
   },
 
   imageStyle:{
@@ -176,3 +176,6 @@ let styles = StyleSheet.create({
     height: 120,
   },
 });
+
+// 输出
+module.exports = ScrollViewDemo;
